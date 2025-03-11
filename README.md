@@ -16,6 +16,9 @@ ________________________________________________________________________________
 │── 2-Visualize_Object_Layer/  # 🔹 Visualiza e corrige os layers deslocados
 │   ├── main.py                # Script principal para visualização e ajuste
 │   ├── .env                   # Arquivo de configuração com caminho das imagens
+│── 3-Data_Augmentation/       # 🔹 Aplica técnica de data augmentation
+│   ├── main.py                # Script principal para aplicar data augmentation
+│   ├── .env                   # Arquivo de configuração com caminho das imagens e caminho para salvar
 │── README.md                  # 🔹 Documentação do projeto
 │── requirements.txt           # 🔹 Dependências do projeto
 │── .gitignore                 # 🔹 Arquivos a serem ignorados pelo Git
@@ -38,6 +41,14 @@ ________________________________________________________________________________
   - Criar novos layers caso necessário,
   - Excluir layers ou imagens inválidas.
 - Objetivo: Garantir a qualidade das anotações no dataset antes do treinamento.
+
+### 🔹 Passo 3: Aplicação de Data Augmentation
+- Diretório: 3-Data_Augmentation/
+- Descrição: 
+  - O script aplica algumas técnicas de data augmentation
+  - Ele pega as imagens do dataset preparado e rotaciona em 90°, 180° e 270°
+  - Recalcula as coordenadas dos layers para manter as marcações
+- Objetivo: Aumentar a variedade de imagens no dataset
 
 ## 📦 Instalação
 ### 1️⃣ Crie um ambiente virtual e ative
