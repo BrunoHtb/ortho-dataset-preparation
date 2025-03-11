@@ -28,6 +28,13 @@ class InteractiveLayerMover:
         self.dragging = False  
         self.drag_start = None  
 
+        # Dicionário para mapear índices de classe para nomes
+        self.class_mapping = {
+            "0": "painel solar",
+            "1": "piscina",
+            "2": "quadra"
+        }
+
         self.fig, self.ax = plt.subplots(figsize=(8, 6))
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.root)
         self.canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
@@ -65,13 +72,15 @@ class InteractiveLayerMover:
         btn_delete_image = ttk.Button(control_frame, text="Excluir Imagem", command=self.delete_current_image)
         btn_delete_image.pack(side=tk.RIGHT, padx=5, pady=5)
 
-        self.class_var = tk.StringVar(value="0") 
-        self.class_combobox = ttk.Combobox(control_frame, textvariable=self.class_var, values=["0", "1", "2", "3"])  # Adicione as classes necessárias
+        self.class_var = tk.StringVar(value="painel solar") 
+        self.class_combobox = ttk.Combobox(control_frame, textvariable=self.class_var, values=list(self.class_mapping.values()))  # Exibe os nomes das classes
         self.class_combobox.pack(side=tk.LEFT, padx=5, pady=5)
         self.class_combobox.bind("<<ComboboxSelected>>", self.on_class_select)
 
     def on_class_select(self, event):
-        self.class_index = self.class_var.get()
+        selected_class_name = self.class_var.get()
+        # Obtém o índice da classe selecionada com base no nome
+        self.class_index = next(key for key, value in self.class_mapping.items() if value == selected_class_name)
 
     def toggle_new_polygon_mode(self):
         self.drawing_new_polygon = not self.drawing_new_polygon
@@ -243,7 +252,6 @@ class InteractiveLayerMover:
             self.save_coords()
             self.index += 1
             self.load_current_image()
-
 
 def main():
     root = tk.Tk()
