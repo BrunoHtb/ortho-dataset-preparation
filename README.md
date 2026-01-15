@@ -1,10 +1,28 @@
-# 📌 Preparação do Dataset de Objetos das Ortofotos
+# Ortho Dataset Preparation for Object Detection
 
-## 📝 Descrição
+Scripts to prepare and organize datasets used for training YOLO object detection models on high-resolution orthophotos.
+
+---
+
+## 🇧🇷 Preparação do Dataset de Objetos das Ortofotos
+
 Este repositório contém scripts para preparação e organização de datasets utilizados no treinamento de uma rede neural YOLO para detecção de objetos em ortofotos.
 
-O objetivo principal é extrair, visualizar e corrigir objetos de interesse a partir de ortofotos e arquivos DXF, garantindo um dataset bem anotado e de alta qualidade.
-___________________________________________________________________________________________________________________________________________
+
+## 📝 Project Overview
+
+This project prepares training datasets for YOLO object detection models by combining orthophotos
+(TIF/TFW) with DXF annotations, generating cropped object images, reviewing layer alignment,
+and applying data augmentation.
+
+---
+
+## 📝 Visão Geral do Projeto
+
+Este projeto prepara datasets de treinamento para modelos YOLO ao integrar ortofotos (TIF/TFW)
+com anotações DXF, gerando recortes de objetos, revisando alinhamento de layers e aplicando
+técnicas de data augmentation.
+
 
 ## 📁 Estrutura do Repositório
 
