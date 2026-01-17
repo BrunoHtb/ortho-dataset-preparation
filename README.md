@@ -17,7 +17,7 @@ and applying data augmentation.
 
 ---
 
-## 📝 Visão Geral do Projeto
+## 🇧🇷📝 Visão Geral do Projeto
 
 Este projeto prepara datasets de treinamento para modelos YOLO ao integrar ortofotos (TIF/TFW)
 com anotações DXF, gerando recortes de objetos, revisando alinhamento de layers e aplicando
